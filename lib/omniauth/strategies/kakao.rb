@@ -62,11 +62,12 @@ module OmniAuth
 
     private
       def raw_info
-        @raw_info ||= access_token.get('https://kapi.kakao.com/v2/user/me', {}).parsed || {}
+        #@raw_info ||= access_token.get('https://kapi.kakao.com/v2/user/me', {}).parsed || {}
+        @raw_info ||= {}
       end
 
       def raw_properties
-        @raw_properties ||= raw_info['properties']
+        @raw_properties ||= raw_info['properties'] || {}
       end
     end
   end
